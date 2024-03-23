@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import Homepage from './modules/homepage'
+import {RouterProvider} from 'react-router-dom';
+import Layout from './modules/layout'
+import router from './routes'
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Homepage/>,
-  },
-]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <div className={'header'}>
+    <h1>MLB stats</h1>
+  </div>
+  <div className={'contentWrapper'}>
     <RouterProvider router={router} />
+    </div>
   </React.StrictMode>
 );
 
