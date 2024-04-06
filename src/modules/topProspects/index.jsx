@@ -22,20 +22,20 @@ const TopProspects = (props) => {
     setTeam(event.target.value)
   }
 
-  return <div className={'topProspects'}>
+  return <div className={'topProspects'} style={{marginBottom: '20px'}} >
     <TeamSelect team={team} changeTeam={changeTeam}/>
-    <TableContainer component={Paper}>
+    <TableContainer sx={{marginTop: '20px',}} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Player</TableCell>
-            <TableCell align="right">Age</TableCell>
-            <TableCell align="right">Rank</TableCell>
+            <TableCell>Age</TableCell>
+            <TableCell>Rank</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
         { prospects.map((prospect)=> (
-          <TableRow>
+          <TableRow key={prospect.Rk}>
             <TableCell>{prospect.Player}</TableCell>
             <TableCell>{prospect.Age}</TableCell>
             <TableCell>{prospect.Rk}</TableCell>

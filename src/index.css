@@ -16,14 +16,12 @@ code {
   background: #f8f8f8;
   height: 100vh;
   width: 100vw;
-}
-
-.header {
-  height: 40px;
-  background: #fff;
-  text-align: center;
+  overflow-y: hidden;
 }
 
 .contentWrapper {
   padding: 25px;
+  background: #F8F8F8;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
 }

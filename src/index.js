@@ -2,22 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {RouterProvider} from 'react-router-dom';
-import Layout from './modules/layout'
-import router from './routes'
-
-
-
+import {BrowserRouter} from 'react-router-dom';
+import Layout from './routes/layout'
+import Header from './modules/header'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ff7300',
+    },
+  },
+});
+
 root.render(
   <React.StrictMode>
-  <div className={'header'}>
-    <h1>MLB stats</h1>
-  </div>
-  <div className={'contentWrapper'}>
-    <RouterProvider router={router} />
+  <BrowserRouter>
+  <ThemeProvider theme={theme}>
+    <div className={'app'}>
+    <Header />
+    <div className={'contentWrapper'}>
+      <Layout/>
     </div>
+    </div>
+    </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
