@@ -23,7 +23,7 @@ const TopProspects = (props) => {
   }
 
   return <div className={'topProspects'} style={{marginBottom: '20px'}} >
-    <TeamSelect team={team} changeTeam={changeTeam}/>
+    <TeamSelect allowAll={true} team={team} changeTeam={changeTeam}/>
     <TableContainer sx={{marginTop: '20px',}} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>

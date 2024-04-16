@@ -6,8 +6,20 @@ const TeamSelect = (props) => {
   return <div style={{width: 300}}>
   <FormControl fullWidth>
       <InputLabel id="team-select-label">Select a team</InputLabel>
-      <Select sx={{background: '#FFF'}} labelId="team-select-label" label='Select a team' value={props.team} onChange={props.changeTeam}>
+      <Select MenuProps={{
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "left"
+      },
+      transformOrigin: {
+        vertical: "top",
+        horizontal: "left"
+      },
+    }} sx={{background: '#FFF'}} labelId="team-select-label" label='Select a team' value={props.team} onChange={props.changeTeam}>
+      {props.allowAll ?
         <MenuItem value={''}>All teams</MenuItem>
+        : null
+      }
         <MenuItem value={'angels'}>Angels</MenuItem>
         <MenuItem value={'astros'}>Astros</MenuItem>
         <MenuItem value={'athletics'}>Athletics</MenuItem>

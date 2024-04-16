@@ -13,7 +13,6 @@ const Header = (props) => {
   };
 
   const handleClose = (url) => {
-    debugger;
     setOpen(false);
     navigate(`/${url}`)
 
@@ -21,7 +20,7 @@ const Header = (props) => {
 
   return <div className={'header'}>
     <MenuIcon onClick={handleClick}/>
-    <h1 style={{ textAlign: 'center' }} onCLick={() => {debugger; handleClose('')}}>MLB stats</h1>
+    <h1 style={{ textAlign: 'center' }} onCLick={() => {handleClose('')}}>MLB stats</h1>
     <div/>
     <Drawer
         id="sidebar"

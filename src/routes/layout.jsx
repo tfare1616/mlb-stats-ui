@@ -6,6 +6,7 @@ import Homepage from '../modules/homepage'
 import Standings from '../modules/standings'
 import BatterData from '../modules/batterData'
 import War from '../modules/war'
+import Roster from '../modules/roster'
 
 const Layout = (props) => {
   const [loading, setLoading] = useState(false);
@@ -24,6 +25,7 @@ return <div>
     <Route path="/standings" element={<Standings setLoading={setLoading} loading={loading} />} />
     <Route path="/hitting" element={<BatterData setLoading={setLoading} loading={loading} />} />
     <Route path="/war" element={<War setLoading={setLoading} loading={loading} />} />
+    <Route path="/roster" element={<Roster setLoading={setLoading} loading={loading} />} />
   </Routes>
 </div>
 }
